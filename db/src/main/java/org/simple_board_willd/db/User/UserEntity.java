@@ -5,7 +5,6 @@ import lombok.experimental.SuperBuilder;
 import org.simple_board_willd.db.BaseEntity;
 import org.simple_board_willd.db.User.Enums.UserStatus;
 import org.simple_board_willd.db.User.Enums.UserType;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
 

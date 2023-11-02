@@ -19,9 +19,11 @@ public class ApiExeptionHandler {
         log.error("", apiExeption);
 
         var errorCode = apiExeption.getErrorCodeIfs();
+        var description = apiExeption.getErrorDescription();
 
         return ResponseEntity
                 .status(errorCode.getHttpStatusCode())
-                .body(Api.ERROR(errorCode));
+                .body(Api.ERROR(errorCode, description));
+
     }
 }

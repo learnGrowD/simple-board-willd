@@ -32,4 +32,12 @@ public class Result {
                 .resultDescription("에러발생")
                 .build();
     }
+
+    public static Result ERROR(ErrorCodeIfs errorCodeIfs, String description) {
+        return Result.builder()
+                .resultCode(errorCodeIfs.getErrorCode())
+                .resultMessage(errorCodeIfs.getDescription())
+                .resultDescription(description)
+                .build();
+    }
 }
