@@ -29,17 +29,18 @@ public class UserOpenApiController {
             @Valid
             @RequestBody UserRegisterRequest request
     ) {
-        try {
-            var resonse = userBusiness.register(request);
-            return Api.OK(resonse);
-        } catch (Exception e) {
-            if (e instanceof ValidationException) {
-                throw new ApiExeption(ErrorCode.SERVER_ERROR, "서버에러111!!");
-            } else {
-                throw new ApiExeption(ErrorCode.SERVER_ERROR, "서버에러222!!");
-            }
-
-        }
+        var resonse = userBusiness.register(request);
+        return Api.OK(resonse);
+//        try {
+//
+//        } catch (Exception e) {
+//            if (e instanceof ValidationException) {
+//                throw new ApiExeption(ErrorCode.SERVER_ERROR, "서버에러111!!");
+//            } else {
+//                throw new ApiExeption(ErrorCode.SERVER_ERROR, "서버에러222!!");
+//            }
+//
+//        }
     }
 
     //로그인

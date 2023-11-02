@@ -23,8 +23,6 @@ public class GlobalExeptionHandler {
 
         return ResponseEntity
                 .status(500)
-                .body(
-                        Api.ERROR(ErrorCode.SERVER_ERROR)
-                );
+                .body(Api.ERROR(ErrorCode.SERVER_ERROR, exception.getLocalizedMessage()));
     }
 }
