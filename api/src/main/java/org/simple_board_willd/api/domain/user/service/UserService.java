@@ -1,6 +1,7 @@
 package org.simple_board_willd.api.domain.user.service;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.simple_board_willd.api.common.error.ErrorCode;
 import org.simple_board_willd.api.common.error.UserErrorCode;
 import org.simple_board_willd.api.common.exeption.ApiExeption;

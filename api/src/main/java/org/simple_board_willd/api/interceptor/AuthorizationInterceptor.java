@@ -34,7 +34,7 @@ public class AuthorizationInterceptor implements HandlerInterceptor {
         if (handler instanceof ResourceHttpRequestHandler) {
             return true;
         }
-        var accessToken = request.getHeader("authorization-token");
+        var accessToken = request.getHeader("Authorization");
         if (accessToken == null) {
             throw new ApiExeption(TokenErrorCode.AUTHORIZATION_TOKEN_NOT_FOUND);
         }

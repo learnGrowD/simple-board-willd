@@ -1,6 +1,7 @@
 package org.simple_board_willd.api.domain.board.converter;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.simple_board_willd.api.common.annotation.Converter;
 import org.simple_board_willd.api.domain.board.controller.model.BoardCreateRequest;
 import org.simple_board_willd.api.domain.board.controller.model.BoardResponse;
@@ -19,7 +20,10 @@ public class BoardConverter {
     private final UserService userService;
 
     public BoardEntity toEntity(BoardCreateRequest request) {
+        var userEntity = userService.getUserEntity();
+
         return BoardEntity.builder()
+                .userId(userEntity.getId())
                 .boardName(request.getBoardName())
                 .content(request.getContent())
                 .build();
@@ -38,6 +42,7 @@ public class BoardConverter {
                 .boardName(entity.getBoardName())
                 .boardContent(entity.getContent())
                 .boardStatus(entity.getStatus())
+                .postedAt(entity.getPostedAt())
                 .build();
     }
 }
