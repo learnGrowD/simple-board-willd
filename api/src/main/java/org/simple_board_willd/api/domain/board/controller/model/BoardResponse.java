@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.simple_board_willd.db.User.Enums.UserStatus;
+import org.simple_board_willd.db.User.Enums.UserType;
 import org.simple_board_willd.db.board.enums.BoardStatus;
 
 import java.time.LocalDateTime;
@@ -23,9 +25,9 @@ public class BoardResponse {
 
     private String userEmail;
 
-    private String userType;
+    private UserType userType;
 
-    private String userStatus;
+    private UserStatus userStatus;
 
     private String boardName;
 

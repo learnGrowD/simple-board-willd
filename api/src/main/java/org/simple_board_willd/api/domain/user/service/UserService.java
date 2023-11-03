@@ -10,6 +10,8 @@ import org.simple_board_willd.db.User.Enums.UserStatus;
 import org.simple_board_willd.db.User.UserEntity;
 import org.simple_board_willd.db.User.UserRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.context.request.RequestContextHolder;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -35,5 +37,11 @@ public class UserService {
         var optionalUserEntity = userRepository.findFirstByEmailAndPasswordAndStatusOrderByIdDesc(request.getEmail(), request.getPassword(), UserStatus.REGISTERD);
         var result = optionalUserEntity.orElseThrow(() -> new ApiExeption(UserErrorCode.USER_NOT_FOUND, "UserEntiy is null"));
         return result;
+    }
+
+    public UserEntity getUserEntity() {
+        var userId = RequestContextHolder.getRequestAttributes().getAttribute("userId", RequestAttributes.SCOPE_REQUEST);
+        var userEntity = userRepository.findById(Long.parseLong(userId.toString()));
+        return userEntity.orElseThrow(() -> new ApiExeption(UserErrorCode.USER_NOT_FOUND));
     }
 }
