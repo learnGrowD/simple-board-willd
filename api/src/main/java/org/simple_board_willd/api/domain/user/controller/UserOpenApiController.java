@@ -8,6 +8,7 @@ import org.simple_board_willd.api.domain.user.business.UserBusiness;
 import org.simple_board_willd.api.domain.user.controller.model.UserRegisterRequest;
 import org.simple_board_willd.api.domain.user.controller.model.UserResponse;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,7 @@ import javax.validation.ValidationException;
 
 @RequiredArgsConstructor
 @RestController
+@Validated
 @RequestMapping("/open-api/user")
 public class UserOpenApiController {
 

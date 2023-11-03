@@ -6,6 +6,7 @@ import org.simple_board_willd.db.User.Enums.UserType;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Data
 @NoArgsConstructor
@@ -14,8 +15,8 @@ public class UserRegisterRequest {
     @NotBlank
     private String name;
 
-    @NotBlank
     @Email
+    @NotBlank
     private String email;
 
     @NotBlank
