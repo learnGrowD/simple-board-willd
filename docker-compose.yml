@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  spring_app:
+    container_name: spring_app
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database_mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://database_mysql:3306/simple_board_willd?useSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root1234!!
+      SPRING_DATABASE_DRIVER-CLASS-NAME: com.mysql.cj.jdbc.Driver
+      SPRING_JPA_SHOW-SQL: "true"
+      SPRING_JPA_PROPERTIES_HIBERNATE_HBM2DDL_AUTO: update
+      SPRING_JPA_PROPERTIES_FORMAT_SQL: "true"
+      SPRING_JPA_PROPERTIES_DIALECT: "org.hibernate.dialect.MySQL8Dialect"
+      SPRING_JPA_HIBERNATE_DDL-AUTO: "validate"
+      TOKEN_SECRET_KEY: SpringBootJWTHelperTokenSecretKeyValue123!@#
+      TOKEN_ACCESS_TOKEN_PLUS_HOUR: 1
+      TOKEN_REFRESH_TOKEN_PLUS_HOUR: 12
+
+  database_mysql:
+    image: mysql:latest
+    restart: always
+    command:
+      - --lower_case_table_names=1
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: root1234!!
+      MYSQL_DATABASE: simple_board_willd
+      TZ: Asia/Seoul
+      MYSQL_MAJOR: 8.0
+      GOSU_VERSION: 1.12
+      MYSQL_VERSION: 8.0.26-1debian10
+    container_name: database_mysql

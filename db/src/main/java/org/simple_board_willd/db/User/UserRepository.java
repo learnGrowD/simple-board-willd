@@ -15,4 +15,7 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
     //이메일, 패스워드를 통해서 사용자 정보 조회 and 활성, 비활성
     // select * from user where email = ? and password = ? and status order by id desc limit 1
     Optional<UserEntity> findFirstByEmailAndPasswordAndStatusOrderByIdDesc(String email, String password, UserStatus status);
+
+
+
 }
