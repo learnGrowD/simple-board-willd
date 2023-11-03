@@ -8,6 +8,7 @@ import org.simple_board_willd.db.board.enums.BoardStatus;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 @RequiredArgsConstructor
@@ -23,4 +24,6 @@ public class BoardService {
         entity.setPostedAt(LocalDateTime.now());
         return boardRepository.save(entity);
     }
+
+
 }
