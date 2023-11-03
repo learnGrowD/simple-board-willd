@@ -12,7 +12,6 @@ import java.util.List;
 @Getter
 public class Api<T> {
     private Result result;
-
     @Valid
     private T body;
 
@@ -43,6 +42,4 @@ public class Api<T> {
         api.body = new HashMap();
         return api;
     }
-
-
 }

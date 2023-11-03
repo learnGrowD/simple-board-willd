@@ -1,6 +1,5 @@
 package org.simple_board_willd.api.domain.token.model;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,5 +14,6 @@ import java.time.LocalDateTime;
 public class TokenDto {
 
     private String token;
+
     private LocalDateTime expiredAt;
 }

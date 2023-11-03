@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class ApiExeptionHandler {
     @ExceptionHandler(value = ApiExeption.class)
     public ResponseEntity<Api<Object>> apiException(
-        ApiExeption apiExeption
+            ApiExeption apiExeption
     ) {
         log.error("", apiExeption);
 

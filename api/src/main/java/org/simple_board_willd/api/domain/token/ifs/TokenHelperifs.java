@@ -7,6 +7,7 @@ import java.util.Map;
 
 public interface TokenHelperifs {
     TokenDto issueAccessToken(Map<String, Object> data);
+
     TokenDto issueRefeshToken(Map<String, Object> data);
 
     Map<String, Object> validationTokenWithThrow(String token);

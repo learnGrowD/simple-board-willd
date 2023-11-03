@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class GlobalExeptionHandler {
 
     @ExceptionHandler(value = Exception.class)
-    public ResponseEntity<Api<Object>> exception (
+    public ResponseEntity<Api<Object>> exception(
             Exception exception
-    ){
-        log.error("",exception);
+    ) {
+        log.error("", exception);
 
         return ResponseEntity
                 .status(500)

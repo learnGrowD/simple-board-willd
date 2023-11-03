@@ -18,8 +18,12 @@ public class TokenConverter {
             TokenDto accessToken,
             TokenDto refreshToken
     ) {
-        Objects.requireNonNull(accessToken, () -> {throw new ApiExeption(ErrorCode.NULL_POINT);});
-        Objects.requireNonNull(refreshToken, () -> {throw new ApiExeption(ErrorCode.NULL_POINT);});
+        Objects.requireNonNull(accessToken, () -> {
+            throw new ApiExeption(ErrorCode.NULL_POINT);
+        });
+        Objects.requireNonNull(refreshToken, () -> {
+            throw new ApiExeption(ErrorCode.NULL_POINT);
+        });
 
         return TokenResponse.builder()
                 .accessToken(accessToken.getToken())
@@ -28,6 +32,4 @@ public class TokenConverter {
                 .refreshTokenExpiredAt(refreshToken.getExpiredAt())
                 .build();
     }
-
-
 }

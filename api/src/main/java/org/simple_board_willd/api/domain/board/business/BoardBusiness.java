@@ -7,10 +7,8 @@ import org.simple_board_willd.api.domain.board.controller.model.BoardResponse;
 import org.simple_board_willd.api.domain.board.controller.model.BoardUpdateRequest;
 import org.simple_board_willd.api.domain.board.converter.BoardConverter;
 import org.simple_board_willd.api.domain.board.service.BoardService;
-import org.simple_board_willd.db.board.BoardEntity;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -19,7 +17,6 @@ public class BoardBusiness {
 
     private final BoardService boardService;
     private final BoardConverter boardConverter;
-
 
     public BoardResponse create(BoardCreateRequest request) {
         var boardEntity = boardConverter.toEntity(request);
@@ -51,5 +48,4 @@ public class BoardBusiness {
         var result = boardConverter.toResponse(entity);
         return result;
     }
-
 }

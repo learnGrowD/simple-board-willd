@@ -16,7 +16,6 @@ public class TokenService {
 
     private final TokenHelperifs tokenHelperifs;
 
-
     public TokenDto issueAccessToken(Long userId) {
         var data = new HashMap<String, Object>();
         data.put("userId", userId);
@@ -33,10 +32,9 @@ public class TokenService {
         var map = tokenHelperifs.validationTokenWithThrow(token);
         var userId = map.get("userId");
 
-        Objects.requireNonNull(userId, () -> { throw new ApiExeption(ErrorCode.NULL_POINT); });
+        Objects.requireNonNull(userId, () -> {
+            throw new ApiExeption(ErrorCode.NULL_POINT);
+        });
         return Long.parseLong(userId.toString());
     }
-
-
-
 }

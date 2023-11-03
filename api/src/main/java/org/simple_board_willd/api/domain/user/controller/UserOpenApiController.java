@@ -27,7 +27,7 @@ import javax.validation.ValidationException;
 public class UserOpenApiController {
 
     private final UserBusiness userBusiness;
-    //회원가입
+
     @PostMapping("/register")
     public Api<UserResponse> register(
             @Valid
@@ -37,7 +37,6 @@ public class UserOpenApiController {
         return Api.OK(resonse);
     }
 
-    //로그인
     @PostMapping("/login")
     public Api<TokenResponse> login(
             @Valid

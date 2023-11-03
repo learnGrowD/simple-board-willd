@@ -1,12 +1,10 @@
 package org.simple_board_willd.api.common.api;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.simple_board_willd.api.common.error.ErrorCode;
 import org.simple_board_willd.api.common.error.ErrorCodeIfs;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

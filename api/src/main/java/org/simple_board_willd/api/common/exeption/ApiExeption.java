@@ -27,5 +27,4 @@ public class ApiExeption extends RuntimeException implements ApiExeptionIfs {
         this.errorCodeIfs = errorCodeIfs;
         this.errorDescription = errorDescription;
     }
-
 }

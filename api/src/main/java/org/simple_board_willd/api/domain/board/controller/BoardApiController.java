@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/board")
 public class BoardApiController {
 
     private final BoardBusiness boardBusiness;
+
     @PostMapping("")
     public Api<BoardResponse> create(
             @Valid

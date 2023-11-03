@@ -24,13 +24,14 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    //회원가입 하기
     public UserEntity register(UserEntity entity) {
-        var newEntity = Optional.ofNullable(entity).map( it -> {
+        var newEntity = Optional.ofNullable(entity).map(it -> {
             it.setRegisteredAt(LocalDateTime.now());
             it.setStatus(UserStatus.REGISTERD);
             return it;
-        }).orElseThrow( () -> {throw new ApiExeption(ErrorCode.NULL_POINT, "UserEntity is null");});
+        }).orElseThrow(() -> {
+            throw new ApiExeption(ErrorCode.NULL_POINT, "UserEntity is null");
+        });
         return userRepository.save(newEntity);
     }
 

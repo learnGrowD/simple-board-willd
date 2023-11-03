@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 @Converter
 public class UserConverter {
 
-
     public UserEntity toEntity(UserRegisterRequest request) {
         return UserEntity.builder()
                 .name(request.getName())

@@ -13,7 +13,6 @@ import java.util.List;
 public class WebConfig implements WebMvcConfigurer {
     private final AuthorizationInterceptor authorizationInterceptor;
 
-
     private List<String> OPEN_API = List.of(
             "/open-api/**"
     );

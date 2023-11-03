@@ -90,7 +90,7 @@ public class JwtTokenHelper implements TokenHelperifs {
         } catch (Exception e) {
             if (e instanceof SignatureException) {
                 throw new ApiExeption(TokenErrorCode.INVALID_TOKEN, e);
-            } else if(e instanceof ExpiredJwtException) {
+            } else if (e instanceof ExpiredJwtException) {
                 throw new ApiExeption(TokenErrorCode.EXPIRED_TOKEN, e);
             } else {
                 throw new ApiExeption(TokenErrorCode.TOKEN_EXCEPTION, e);

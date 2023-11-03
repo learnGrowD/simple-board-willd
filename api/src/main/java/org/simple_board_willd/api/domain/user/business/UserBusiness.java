@@ -18,12 +18,11 @@ public class UserBusiness {
     private final UserConverter userConverter;
     private final TokenBusiness tokenBusiness;
 
-    //
     public UserResponse register(UserRegisterRequest request) {
         var entity = userConverter.toEntity(request);
         var newEntity = userService.register(entity);
         var result = userConverter.toResponse(newEntity);
-        return  result;
+        return result;
     }
 
     public TokenResponse login(UserLoginRequest request) {

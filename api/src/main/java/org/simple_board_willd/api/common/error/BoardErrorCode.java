@@ -2,7 +2,6 @@ package org.simple_board_willd.api.common.error;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-
 @Getter
 @AllArgsConstructor
 public enum BoardErrorCode implements ErrorCodeIfs{
