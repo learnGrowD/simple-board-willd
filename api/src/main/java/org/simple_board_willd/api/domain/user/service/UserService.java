@@ -2,7 +2,9 @@ package org.simple_board_willd.api.domain.user.service;
 
 import lombok.RequiredArgsConstructor;
 import org.simple_board_willd.api.common.error.ErrorCode;
+import org.simple_board_willd.api.common.error.UserErrorCode;
 import org.simple_board_willd.api.common.exeption.ApiExeption;
+import org.simple_board_willd.api.domain.user.controller.model.UserLoginRequest;
 import org.simple_board_willd.api.domain.user.controller.model.UserRegisterRequest;
 import org.simple_board_willd.db.User.Enums.UserStatus;
 import org.simple_board_willd.db.User.UserEntity;
@@ -27,5 +29,11 @@ public class UserService {
             return it;
         }).orElseThrow( () -> {throw new ApiExeption(ErrorCode.NULL_POINT, "UserEntity is null");});
         return userRepository.save(newEntity);
+    }
+
+    public UserEntity login(UserLoginRequest request) {
+        var optionalUserEntity = userRepository.findFirstByEmailAndPasswordAndStatusOrderByIdDesc(request.getEmail(), request.getPassword(), UserStatus.REGISTERD);
+        var result = optionalUserEntity.orElseThrow(() -> new ApiExeption(UserErrorCode.USER_NOT_FOUND, "UserEntiy is null"));
+        return result;
     }
 }
