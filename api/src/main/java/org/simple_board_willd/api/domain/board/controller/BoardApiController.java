@@ -6,6 +6,7 @@ import org.simple_board_willd.api.common.api.Api;
 import org.simple_board_willd.api.domain.board.business.BoardBusiness;
 import org.simple_board_willd.api.domain.board.controller.model.BoardCreateRequest;
 import org.simple_board_willd.api.domain.board.controller.model.BoardResponse;
+import org.simple_board_willd.api.domain.board.controller.model.BoardUpdateRequest;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -29,24 +30,28 @@ public class BoardApiController {
 
     @GetMapping("/all")
     public Api<List<BoardResponse>> all() {
-        
+        var result = boardBusiness.all();
+        return Api.OK(result);
     }
 
-    @PostMapping("/{id}")
+    @GetMapping("/{boardId}")
     public Api<BoardResponse> detail(@PathVariable Long boardId) {
-
+        var result = boardBusiness.detail(boardId);
+        return Api.OK(result);
     }
 
     @PutMapping("")
     public Api<BoardResponse> update(
             @Valid
-            @RequestBody BoardCreateRequest request
+            @RequestBody BoardUpdateRequest request
     ) {
-
+        var result = boardBusiness.update(request);
+        return Api.OK(result);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{boardId}")
     public Api<BoardResponse> delete(@PathVariable Long boardId) {
-
+        var result = boardBusiness.delete(boardId);
+        return Api.OK(result);
     }
 }
