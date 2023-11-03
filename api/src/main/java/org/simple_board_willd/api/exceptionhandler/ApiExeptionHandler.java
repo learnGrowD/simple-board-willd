@@ -24,7 +24,5 @@ public class ApiExeptionHandler {
         return ResponseEntity
                 .status(errorCode.getHttpStatusCode())
                 .body(Api.ERROR(errorCode, description));
-        
-
     }
 }
