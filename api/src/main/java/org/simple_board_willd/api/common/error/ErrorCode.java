@@ -17,3 +17,8 @@ public enum ErrorCode implements ErrorCodeIfs {
     private final String description;
 
 }
+
+// status ()
+// 200, 204
+// 301, 302
+// 네트워크

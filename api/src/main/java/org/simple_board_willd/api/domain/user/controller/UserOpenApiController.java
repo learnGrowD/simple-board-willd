@@ -1,5 +1,6 @@
 package org.simple_board_willd.api.domain.user.controller;
 
+import ch.qos.logback.core.encoder.EchoEncoder;
 import lombok.RequiredArgsConstructor;
 import org.simple_board_willd.api.common.api.Api;
 import org.simple_board_willd.api.common.error.ErrorCode;
@@ -11,6 +12,7 @@ import org.simple_board_willd.api.domain.user.controller.model.UserRegisterReque
 import org.simple_board_willd.api.domain.user.controller.model.UserResponse;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
