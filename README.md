@@ -27,30 +27,115 @@ docker-compose up -d
 http://localhost:8080 접속
 
 ## API
-* 회원가입
-  - 주소: http://localhost:8080/open-api/user/register
-  - method: POST
+<details>
+  <summary>회원가입</summary>
+  <div markdown="1">
+  POST http://localhost:8080/open-api/user/register
 
-* 로그인
-  - 주소: http://localhost:8080/open-api/user/login
-  - method: POST
-  
-* 게시판 생성
-  - 주소: http://localhost:8080/api/board
-  - method: POST
-    
-* 게시판 리스트 조회
-  - 주소: http://localhost:8080/api/board/all
-  - method: GET
+Request
+```
+{
+  name: "userName",
+  email: "example@google.com",
+  "password": "password1234!",
+  "address": "서울시 강남구",
+  "userType": "COMMON"
+}
+```
+Response
+```
+{
+  name: "userName",
+  email: "example@google.com",
+  "password": "password1234!",
+  "address": "서울시 강남구",
+  "userType": "COMMON"
+}
+```
+  </div>
+</details>
 
-* 게시판 조회
-  - 주소: http://localhost:8080/api/board/{id}
-  - method: GET
- 
-* 게시판 업데이트
-  - 주소: http://localhost:8080/api/board
-  - method: PUT
-   
-* 게시판 삭제
-  - 주소: http://localhost:8080/api/board/{id}
-  - method: DELETE
+
+<details>
+  <summary>로그인</summary>
+  <div markdown="1">
+  POST: http://localhost:8080/open-api/user/login
+
+Request
+```
+
+```
+Response
+```
+
+```
+  </div>
+</details>
+
+
+<details>
+  <summary>게시판 리스트 조회</summary>
+  <div markdown="1">
+  GET http://localhost:8080/api/board/all
+
+Request
+```
+
+```
+Response
+```
+
+```
+  </div>
+</details>
+
+
+<details>
+  <summary>게시판 조회</summary>
+  <div markdown="1">
+  GET http://localhost:8080/api/board/{id}
+
+Request
+```
+
+```
+Response
+```
+
+```
+  </div>
+</details>
+
+
+<details>
+  <summary>게시판 업데이트</summary>
+  <div markdown="1">
+  PUT: http://localhost:8080/api/board
+
+Request
+```
+
+```
+Response
+```
+
+```
+  </div>
+</details>
+
+
+<details>
+  <summary>게시판 삭제</summary>
+  <div markdown="1">
+  DELETE: http://localhost:8080/api/board/{id}
+
+Request
+```
+
+```
+Response
+```
+
+```
+  </div>
+</details>
