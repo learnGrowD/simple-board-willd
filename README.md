@@ -47,10 +47,10 @@ http://localhost:8080 접속
   - 주소: http://localhost:8080/api/board/{id}
   - method: GET
  
- * 게시판 업데이트
+* 게시판 업데이트
   - 주소: http://localhost:8080/api/board
   - method: PUT
-    
- * 게시판 삭제
+   
+* 게시판 삭제
   - 주소: http://localhost:8080/api/board
   - method: DELETE
