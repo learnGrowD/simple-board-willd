@@ -11,10 +11,10 @@ import javax.validation.constraints.NotEmpty;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserLoginRequest {
-    @NotEmpty
+    @NotEmpty(message = "이메일을 입력해주세요.")
     @Email
     private String email;
 
-    @NotEmpty
+    @NotEmpty(message = "패스워드를 입력해주세요")
     private String password;
 }

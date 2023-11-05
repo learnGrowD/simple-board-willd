@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class BoardCreateRequest {
 
-    @NotBlank
+    @NotBlank(message = "게시판 이름을 작성해주세요.")
     private String boardName;
 
     private String content;
