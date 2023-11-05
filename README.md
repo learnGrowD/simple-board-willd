@@ -35,11 +35,11 @@ http://localhost:8080 접속
 Request
 ```
 {
-  name: String,
-  email: String,
-  "password": String,
-  "address": String,
-  "user_type": Enum("ADMIN", "COMMON")
+	"name": String,
+	"email": String,
+	"password": String,
+	"address": String,
+	"user_type": Enum("ADMIN", "COMMON")
 }
 ```
 Response
