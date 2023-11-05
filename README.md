@@ -304,7 +304,7 @@ Response ex)
 </details>
 
 <details>
-  <summary>Token Error</summary>
+  <summary>Token Error Code</summary>
   <div markdown="1">
     [httpStatusCode, errorCode, errorDescription]    
 	  
