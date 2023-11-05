@@ -281,10 +281,12 @@ Response
   <summary>Common Error Code</summary>
   <div markdown="1">
     [httpStatusCode, errorCode, errorDescription]
+```
     1. BAD_REQUEST(HttpStatus.BAD_REQUEST.value(), 400, "잘못된 요청"),
     2. VALIDATION_EXCEPTION(400, 510, "Validation Exception"),
     3. NULL_POINT(400, 512, "Null point"),
     4. SERVER_ERROR(500, 500, "서버에러");  
+```
   </div>
 </details>
 
