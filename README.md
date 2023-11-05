@@ -21,7 +21,7 @@
       
 ## 실행 방법
 ```
-git clone ..
+git clone git@github.com:learnGrowD/simple-board-willd.git
 docker-compose up -d
 ```
 http://localhost:8080 접속
