@@ -89,6 +89,21 @@ Response
   </div>
 </details>
 
+<details>
+  <summary>게시판 생성</summary>
+  <div markdown="1">
+  POST http://localhost:8080/api/board
+
+Request
+```
+
+```
+Response
+```
+
+```
+  </div>
+</details>
 
 <details>
   <summary>게시판 조회</summary>
