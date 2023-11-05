@@ -35,21 +35,32 @@ http://localhost:8080 접속
 Request
 ```
 {
-  name: "userName",
-  email: "example@google.com",
-  "password": "password1234!",
-  "address": "서울시 강남구",
-  "userType": "COMMON"
+  name: String,
+  email: String,
+  "password": String,
+  "address": String,
+  "user_type": Enum("ADMIN", "COMMON")
 }
 ```
 Response
 ```
 {
-  name: "userName",
-  email: "example@google.com",
-  "password": "password1234!",
-  "address": "서울시 강남구",
-  "userType": "COMMON"
+	"result": {
+		"result_code": Int,
+		"result_message": String,
+		"result_description": String
+	},
+	"body": {
+		"id": Long,
+		"name": String,
+		"email": String,
+		"address": String,
+		"status": Enum("REGISTERED", "UNREGISTERED"),
+		"user_type": Enum("ADMIN", "COMMON"),
+		"registered_at": String,
+		"unregistered_at": String?,
+		"last_login_at": String?
+	}
 }
 ```
   </div>
@@ -63,28 +74,26 @@ Response
 
 Request
 ```
-
+{
+	"email": String,
+	"password": String
+}
 ```
 Response
 ```
-
-```
-  </div>
-</details>
-
-
-<details>
-  <summary>게시판 리스트 조회</summary>
-  <div markdown="1">
-  GET http://localhost:8080/api/board/all
-
-Request
-```
-
-```
-Response
-```
-
+{
+	"result": {
+		"result_code": Int,
+		"result_message": String,
+		"result_description": String
+	},
+	"body": {
+		"access_token": String,
+		"access_token_expired_at": String,
+		"refresh_token": String,
+		"refresh_token_expired_at": String
+	}
+}
 ```
   </div>
 </details>
@@ -96,11 +105,67 @@ Response
 
 Request
 ```
-
+{
+	"board_name": String,
+	"content": String?
+}
 ```
 Response
 ```
+{
+	"result": {
+		"result_code": Int,
+		"result_message": String,
+		"result_description": String
+	},
+	"body": {
+		"user_id": Long,
+		"board_id": Long,
+		"user_name": String,
+		"user_email": String,
+		"user_type": Enum("ADMIN", "COMMON"),
+		"user_status": Enum("REGISTERED", "UNREGISTERED"),
+		"board_name": String,
+		"board_content": String?,
+		"board_status": Enum("REGISTERED", "UNREGISTERED"),
+		"posted_at": String
+	}
+}
+```
+  </div>
+</details>
 
+<details>
+  <summary>게시판 리스트 조회</summary>
+  <div markdown="1">
+  GET http://localhost:8080/api/board/all
+
+Request
+```
+```
+Response
+```
+{
+	"result": {
+		"result_code": Int,
+		"result_message": String,
+		"result_description": String
+	},
+	"body": [
+		{
+      		"user_id": Long,
+      		"board_id": Long,
+      		"user_name": String,
+      		"user_email": String,
+      		"user_type": Enum("ADMIN", "COMMON"),
+      		"user_status": Enum("REGISTERED", "UNREGISTERED"),
+      		"board_name": String,
+      		"board_content": String?,
+      		"board_status": Enum("REGISTERED", "UNREGISTERED"),
+      		"posted_at": String
+		}
+	]
+}
 ```
   </div>
 </details>
@@ -112,11 +177,28 @@ Response
 
 Request
 ```
-
 ```
 Response
 ```
-
+{
+	"result": {
+		"result_code": 200,
+		"result_message": "성공",
+		"result_description": "성공"
+	},
+	"body": {
+            "user_id": Long,
+            "board_id": Long,
+            "user_name": String,
+            "user_email": String,
+      	"user_type": Enum("ADMIN", "COMMON"),
+      	"user_status": Enum("REGISTERED", "UNREGISTERED"),
+    		"board_name": String,
+    		"board_content": String?,
+    		"board_status": Enum("REGISTERED", "UNREGISTERED"),
+    		"posted_at": String
+	}
+}
 ```
   </div>
 </details>
@@ -129,11 +211,33 @@ Response
 
 Request
 ```
-
+{
+	"board_id": Long,
+	"board_name": String,
+	"content": String?
+}
 ```
 Response
 ```
-
+{
+	"result": {
+		"result_code": Int,
+		"result_message": String,
+		"result_description": String
+	},
+	"body": {
+            "user_id": Long,
+            "board_id": Long,
+            "user_name": String,
+            "user_email": String,
+      	"user_type": Enum("ADMIN", "COMMON"),
+      	"user_status": Enum("REGISTERED", "UNREGISTERED"),
+    		"board_name": String,
+    		"board_content": String?,
+    		"board_status": Enum("REGISTERED", "UNREGISTERED"),
+    		"posted_at": String
+	}
+}
 ```
   </div>
 </details>
@@ -146,11 +250,28 @@ Response
 
 Request
 ```
-
 ```
 Response
 ```
-
+{
+	"result": {
+		"result_code": Int,
+		"result_message": String,
+		"result_description": String
+	},
+	"body": {
+            "user_id": Long,
+            "board_id": Long,
+            "user_name": String,
+            "user_email": String,
+      	"user_type": Enum("ADMIN", "COMMON"),
+      	"user_status": Enum("REGISTERED", "UNREGISTERED"),
+    		"board_name": String,
+    		"board_content": String?,
+    		"board_status": Enum("REGISTERED", "UNREGISTERED"),
+    		"posted_at": String
+	}
+}
 ```
   </div>
 </details>
