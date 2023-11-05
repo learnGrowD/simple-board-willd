@@ -36,9 +36,12 @@ public class UserService {
     }
 
     public UserEntity login(UserLoginRequest request) {
-        var optionalUserEntity = userRepository.findFirstByEmailAndPasswordAndStatusOrderByIdDesc(request.getEmail(), request.getPassword(), UserStatus.REGISTERD);
-        var result = optionalUserEntity.orElseThrow(() -> new ApiExeption(UserErrorCode.USER_NOT_FOUND, "UserEntiy is null"));
-        return result;
+        var optionalUserEntity = userRepository.findFirstByEmailAndPasswordOrderByIdDesc(request.getEmail(), request.getPassword());
+        var entity = optionalUserEntity.orElseThrow(() -> new ApiExeption(UserErrorCode.USER_NOT_FOUND, "UserEntity is null"));
+        if (entity.getStatus() == UserStatus.UNREGISTERED) {
+            throw new ApiExeption(UserErrorCode.USER_UNAGEGISTERD);
+        }
+        return entity;
     }
 
     public UserEntity getUserEntity() {

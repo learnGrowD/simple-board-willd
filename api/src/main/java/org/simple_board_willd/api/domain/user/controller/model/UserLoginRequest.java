@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 @Data
@@ -11,6 +12,7 @@ import javax.validation.constraints.NotEmpty;
 @AllArgsConstructor
 public class UserLoginRequest {
     @NotEmpty
+    @Email
     private String email;
 
     @NotEmpty

@@ -8,7 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public enum UserErrorCode implements ErrorCodeIfs {
 
-    USER_NOT_FOUND(400, 1404, "사용자를 찾을수 없습니다.");
+    USER_NOT_FOUND(400, 1404, "아이디 또는 비밀번호가 일치하지 않습니다."),
+    USER_UNAGEGISTERD(400, 1405, "해지된 사용자 입니다.");
 
     private final Integer httpStatusCode;
     private final Integer errorCode;
