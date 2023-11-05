@@ -12,19 +12,19 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserRegisterRequest {
-    @NotBlank
+    @NotBlank(message = "이름을 입력해주세요.")
     private String name;
 
     @Email
-    @NotBlank
+    @NotBlank(message = "이메일을 입력해주세요.")
     private String email;
 
-    @NotBlank
+    @NotBlank(message = "패스워드를 입력해주세요.")
     private String password;
 
-    @NotBlank
+    @NotBlank(message = "주소를 입력해주세요.")
     private String address;
 
-    @NotNull
+    @NotBlank(message = "계정타입을 입력해주세요.")
     private UserType userType;
 }
