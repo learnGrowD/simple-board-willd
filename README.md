@@ -51,13 +51,13 @@ Response
 		"result_description": String
 	},
 	"body": {
-		"id": Long,
-		"name": String,
-		"email": String,
-		"address": String,
-		"status": Enum("REGISTERED", "UNREGISTERED"),
-		"user_type": Enum("ADMIN", "COMMON"),
-		"registered_at": String,
+		"id": Long?,
+		"name": String?,
+		"email": String?,
+		"address": String?,
+		"status": Enum?("REGISTERED", "UNREGISTERED"),
+		"user_type": Enum?("ADMIN", "COMMON"),
+		"registered_at": String?,
 		"unregistered_at": String?,
 		"last_login_at": String?
 	}
@@ -88,10 +88,10 @@ Response
 		"result_description": String
 	},
 	"body": {
-		"access_token": String,
-		"access_token_expired_at": String,
-		"refresh_token": String,
-		"refresh_token_expired_at": String
+		"access_token": String?,
+		"access_token_expired_at": String?,
+		"refresh_token": String?,
+		"refresh_token_expired_at": Strin?
 	}
 }
 ```
@@ -119,16 +119,16 @@ Response
 		"result_description": String
 	},
 	"body": {
-		"user_id": Long,
-		"board_id": Long,
-		"user_name": String,
-		"user_email": String,
-		"user_type": Enum("ADMIN", "COMMON"),
-		"user_status": Enum("REGISTERED", "UNREGISTERED"),
-		"board_name": String,
+		"user_id": Long?,
+		"board_id": Long?,
+		"user_name": String?,
+		"user_email": String?,
+		"user_type": Enum?("ADMIN", "COMMON"),
+		"user_status": Enum?("REGISTERED", "UNREGISTERED"),
+		"board_name": String?,
 		"board_content": String?,
-		"board_status": Enum("REGISTERED", "UNREGISTERED"),
-		"posted_at": String
+		"board_status": Enum?("REGISTERED", "UNREGISTERED"),
+		"posted_at": String?
 	}
 }
 ```
@@ -153,16 +153,16 @@ Response
 	},
 	"body": [
 		{
-      		"user_id": Long,
-      		"board_id": Long,
-      		"user_name": String,
-      		"user_email": String,
-      		"user_type": Enum("ADMIN", "COMMON"),
-      		"user_status": Enum("REGISTERED", "UNREGISTERED"),
-      		"board_name": String,
+      		"user_id": Long?,
+      		"board_id": Long?,
+      		"user_name": String?,
+      		"user_email": String?,
+      		"user_type": Enum?("ADMIN", "COMMON"),
+      		"user_status": Enum?("REGISTERED", "UNREGISTERED"),
+      		"board_name": String?,
       		"board_content": String?,
-      		"board_status": Enum("REGISTERED", "UNREGISTERED"),
-      		"posted_at": String
+      		"board_status": Enum?("REGISTERED", "UNREGISTERED"),
+      		"posted_at": String?
 		}
 	]
 }
@@ -187,16 +187,16 @@ Response
 		"result_description": "성공"
 	},
 	"body": {
-		"user_id": Long,
-		"board_id": Long,
-		"user_name": String,
-		"user_email": String,
-		"user_type": Enum("ADMIN", "COMMON"),
-		"user_status": Enum("REGISTERED", "UNREGISTERED"),
-		"board_name": String,
+		"user_id": Long?,
+		"board_id": Long?,
+		"user_name": String?,
+		"user_email": String?,
+		"user_type": Enum?("ADMIN", "COMMON"),
+		"user_status": Enum?("REGISTERED", "UNREGISTERED"),
+		"board_name": String?,
 		"board_content": String?,
-		"board_status": Enum("REGISTERED", "UNREGISTERED"),
-		"posted_at": String
+		"board_status": Enum?("REGISTERED", "UNREGISTERED"),
+		"posted_at": String?
 	}
 }
 ```
@@ -226,16 +226,16 @@ Response
 		"result_description": String
 	},
 	"body": {
-		"user_id": Long,
-		"board_id": Long,
-		"user_name": String,
-		"user_email": String,
-		"user_type": Enum("ADMIN", "COMMON"),
-		"user_status": Enum("REGISTERED", "UNREGISTERED"),
-		"board_name": String,
+		"user_id": Long?,
+		"board_id": Long?,
+		"user_name": String?,
+		"user_email": String?,
+		"user_type": Enum?("ADMIN", "COMMON"),
+		"user_status": Enum?("REGISTERED", "UNREGISTERED"),
+		"board_name": String?,
 		"board_content": String?,
-		"board_status": Enum("REGISTERED", "UNREGISTERED"),
-		"posted_at": String
+		"board_status": Enum?("REGISTERED", "UNREGISTERED"),
+		"posted_at": String?
 	}
 }
 ```
@@ -260,16 +260,16 @@ Response
 		"result_description": String
 	},
 	"body": {
-		"user_id": Long,
-		"board_id": Long,
-		"user_name": String,
-		"user_email": String,
-		"user_type": Enum("ADMIN", "COMMON"),
-		"user_status": Enum("REGISTERED", "UNREGISTERED"),
-		"board_name": String,
+		"user_id": Long?,
+		"board_id": Long?,
+		"user_name": String?,
+		"user_email": String?,
+		"user_type": Enum?("ADMIN", "COMMON"),
+		"user_status": Enum?("REGISTERED", "UNREGISTERED"),
+		"board_name": String?,
 		"board_content": String?,
-		"board_status": Enum("REGISTERED", "UNREGISTERED"),
-		"posted_at": String
+		"board_status": Enum?("REGISTERED", "UNREGISTERED"),
+		"posted_at": String?
 	}
 }
 ```
