@@ -18,10 +18,39 @@
 5. Database Server: Mysql 8
 6. IDEA: IntelliJ
 7. API Client: insomnia
-
+      
 ## 실행 방법
 ```
 git clone ..
 docker-compose up -d
 ```
 http://localhost:8080 접속
+
+## API
+* 회원가입
+  - 주소: http://localhost:8080/open-api/user/register
+  - method: POST
+
+* 로그인
+  - 주소: http://localhost:8080/open-api/user/login
+  - method: POST
+  
+* 게시판 생성
+  - 주소: http://localhost:8080/api/board
+  - method: POST
+    
+* 게시판 리스트 조회
+  - 주소: http://localhost:8080/api/board/all
+  - method: GET
+
+* 게시판 조회
+  - 주소: http://localhost:8080/api/board/{id}
+  - method: GET
+ 
+ * 게시판 업데이트
+  - 주소: http://localhost:8080/api/board
+  - method: PUT
+    
+ * 게시판 삭제
+  - 주소: http://localhost:8080/api/board
+  - method: DELETE
