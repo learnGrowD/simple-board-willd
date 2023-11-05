@@ -275,3 +275,44 @@ Response
 ```
   </div>
 </details>
+
+## ERROR Code
+<details>
+  <summary>Common Error Code</summary>
+  <div markdown="1">
+    [httpStatusCode, errorCode, errorDescription]
+    1. BAD_REQUEST(HttpStatus.BAD_REQUEST.value(), 400, "잘못된 요청"),
+    2. VALIDATION_EXCEPTION(400, 510, "Validation Exception"),
+    3. NULL_POINT(400, 512, "Null point"),
+    4. SERVER_ERROR(500, 500, "서버에러");  
+  </div>
+</details>
+
+<details>
+  <summary>Token Error</summary>
+  <div markdown="1">
+    [httpStatusCode, errorCode, errorDescription]    
+    1. INVALID_TOKEN(400, 2000, "유효하지 않은 코드"),
+    2. EXPIRED_TOKEN(400, 2001, "만료된 토큰"),
+    3. TOKEN_EXCEPTION(400, 2002, "토큰 알수없는 에러"),
+    4. AUTHORIZATION_TOKEN_NOT_FOUND(400, 2003, "인증 헤더 토큰 없음");
+  </div>
+</details>
+
+<details>
+  <summary>User Error Code</summary>
+  <div markdown="1">
+    [httpStatusCode, errorCode, errorDescription]   
+    1. USER_NOT_FOUND(400, 1404, "아이디 또는 비밀번호가 일치하지 않습니다."),
+    2. USER_UNAGEGISTERD(400, 1405, "해지된 사용자 입니다.");
+  </div>
+</details>
+
+<details>
+  <summary>Board Error Code</summary>
+  <div markdown="1">
+    [httpStatusCode, errorCode, errorDescription]     
+    1. NO_DELETE_PERMISSION(400, 1504, "삭제 권한이 없습니다."),
+    2. No_UPDATE_PERMISSION(400, 1505, "수정 권한이 없습니다.");
+  </div>
+</details>
