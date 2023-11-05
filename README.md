@@ -277,6 +277,18 @@ Response
 </details>
 
 ## ERROR Code
+Response ex)
+
+```
+{
+	"result": {
+		"result_code": 1504,
+		"result_message": "삭제 권한이 없습니다.",
+		"result_description": "어드민 계정이 아님."
+	},
+	"body": {}
+}
+```
 <details>
   <summary>Common Error Code</summary>
   <div markdown="1">
