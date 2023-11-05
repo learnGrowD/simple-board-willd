@@ -21,6 +21,6 @@ public class ValidationExceptionHandler {
 
         return ResponseEntity
                 .status(400)
-                .body(Api.ERROR(ErrorCode.NULL_POINT, exception.getLocalizedMessage()));
+                .body(Api.ERROR(ErrorCode.VALIDATION_EXCEPTION, exception.getBindingResult().getFieldError().getDefaultMessage()));
     }
 }
