@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 
 @Data
@@ -12,7 +13,7 @@ import javax.validation.constraints.NotEmpty;
 @AllArgsConstructor
 public class BoardUpdateRequest {
 
-    @NotEmpty(message = "어떠한 게시판인지 확일 할 수 없습니다.")
+    @NotNull
     private Long boardId;
 
     @NotEmpty(message = "게시판 이름을 입력해주세요.")

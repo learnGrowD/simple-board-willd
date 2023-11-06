@@ -25,6 +25,6 @@ public class UserRegisterRequest {
     @NotBlank(message = "주소를 입력해주세요.")
     private String address;
 
-    @NotBlank(message = "계정타입을 입력해주세요.")
+    @NotNull(message = "계정타입을 입력해주세요.")
     private UserType userType;
 }
